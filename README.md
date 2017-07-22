@@ -9,7 +9,7 @@
 你既然想玩一下 [Kotlin][kotlin]，
 那怎么不试一下 [Go][go] 呢？
 我就去查了查 `Kotlin VS Go` 的这个话题，
-发现 [知乎上有人这么说]：
+发现 [知乎上有人这么说][zhihu-kotlin-go]：
 
 > Kotlin 的大优势和大劣势都是完全兼容 Java。
 > 而 Go 最大优势就是对多线程的优化。
