@@ -1,4 +1,6 @@
-## For me, Kotlin or GoLang ?
+# 我的 Go 旅程
+
+## Kotlin vs Golang ?
 
 前阵子 [Kevin][kevin] 跟我们分享了一波 [Kotlin][kotlin]
 
@@ -46,6 +48,67 @@
 
 ## Hi, Lirian
 
+首先我们新建一个Project，
+等等，
+问题来了，
+**Go 语言的 Workspace 一般是什么样子？**
+
+[文档里面是这么说的][go-workspace]：
+
+> 一般来说，项目目录下面会有三个文件夹：src, pkg, bin。
+>
+> 其中 src 是放源文件的，pkg 是放各种~~内裤~~类库、包的，bin是放可执行文件的。
+>
+> 而项目一般是放在 home 目录下的。
+> 假如你要放在其它目录，
+> 你就要去设定一下 GOPATH 这个环境变量了。
+
+噢，这里引入了一个新的词，
+叫 `GOPATH`。
+再看看文档，
+发现这个概念跟 [Java 的 classpath][classpath]、
+[Python 的 sys.path][sys-path] 很类似。
+
+在我们用 `go build` 命令编译项目的时候，
+在 `$GOPATH/src` 下面的源文件们就会被翻出来然后编译。
+
+这里有几条命令可以跑跑看：
+
+```
+> go env
+set GOROOT=C:\CodeEnv\Go  # Go语言的安装路径
+set GOPATH=C:\Code\github\LKI\go  # 本项目的路径
+...
+
+> go env GOPATH  # 只查看 GOPATH 这个环境变量
+C:\Code\github\LKI\go
+
+> go help gopath  # 简单地看一看关于 GOPATH 的说明
+The Go path is bla bla...
+bla bla...
+bla bla...
+
+> go help build  # 理论上这个也可以跑
+usage: go build [bla bla] bla bla [packages]
+
+> go build hi  # 跑跑看
+
+
+> hi
+Hi, Lirian
+```
+
+在边玩边学中，
+我们第一个程序就跑成功了。
+
+很好，接下来我们尝试写一个 [Low DB][lowdb] 那样的 json/in-memory database吧。
+
+取个名，
+就叫…
+
+
+## Fate DB
+
 TODO: 施工中...
 
 
@@ -61,3 +124,7 @@ TODO: 施工中...
 [gogland]: https://www.jetbrains.com/go/
 [xy-go]: https://learnxinyminutes.com/docs/go/
 [go-tour]: https://tour.golang.org/welcome/
+[go-workspace]: https://golang.org/doc/code.html#Workspaces
+[classpath]: https://docs.oracle.com/javase/8/docs/technotes/tools/windows/classpath.html
+[sys-path]: https://docs.python.org/3/library/sys.html
+[lowdb]: https://github.com/typicode/lowdb
