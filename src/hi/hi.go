@@ -13,6 +13,7 @@ func main() {
 	fmt.Println(tryError(true))
 	fmt.Println(tryError(false))
 
+	tryGo()
 }
 
 func tryDefer() {
@@ -25,4 +26,19 @@ func tryError(expectError bool) error {
 	} else {
 		return nil
 	}
+}
+
+func tryChannel(a int, b chan int) {
+	fmt.Printf("Executing %s for %s\n", a, b)
+	b <- a
+}
+
+func tryGo() {
+	b := make(chan int)
+
+	go tryChannel(1, b)
+	go tryChannel(2, b)
+	go tryChannel(4, b)
+
+	fmt.Println(<-b, <-b, <-b)
 }
