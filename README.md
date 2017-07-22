@@ -116,6 +116,46 @@ Hi, Lirian
 
 ## Fate DB
 
+首先我们要写一个 In Memory DB，
+期待它的用法类似如下：
+
+``` go
+var db = fatedb.DB{}
+
+db.Set("key", "value")
+db.Get("key")  // "value"
+db.Get("no-such-key", "default") // "default"
+db.Del("key")
+db.Get("key")  // nil
+```
+
+先不考虑 Thread Safe 的问题，
+首先我们要解决的是 Go 里面 Dictionary/Map 要怎么写？
+那自然是找一下官方的文档: [Go maps in action][go-maps]
+
+学到了 map 的用法以后，
+为了解决 default value 的问题，
+类比于 Python，
+我们要看看有没有 Named Parameter 或者 Optional Parameter 的概念。
+然而，很可惜，
+Go 并没有（或者说我目前没找到）对应的做法。
+而且 [Go 还不支持 method overloading][go-overload]...
+哭，于是我们只能这么去实现了：
+
+```
+db.Get("key")  // "value"
+db.GetWithDefault("no-such-key", "default") // "default"
+```
+
+*开始怀念起了 Python ...*
+
+然后是 `map[string]string` 的问题，
+Go 里面有没有类似于 `map[object]object` 这样的表达呢？
+查了一下，
+可以用 `map[interface{}]interface{}` 来达到效果。
+很神奇嘛，
+那这个 interface 关键字又是干什么的呢？
+
 TODO: 施工中...
 
 
@@ -137,3 +177,5 @@ TODO: 施工中...
 [classpath]: https://docs.oracle.com/javase/8/docs/technotes/tools/windows/classpath.html
 [sys-path]: https://docs.python.org/3/library/sys.html
 [lowdb]: https://github.com/typicode/lowdb
+[go-maps]: https://blog.golang.org/go-maps-in-action
+[go-overload]: https://golang.org/doc/faq#overloading
