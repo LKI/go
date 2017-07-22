@@ -1,28 +1,31 @@
 # 我的 Go 旅程
 
-## Kotlin vs Golang ?
+## Kotlin vs Go ?
 
-前阵子 [Kevin][kevin] 跟我们分享了一波 [Kotlin][kotlin]
-
-感觉 [Kotlin][kotlin] 很好玩，
-想尝试一下。
-
+前阵子 [Kevin][kevin] 跟我们分享了一波 [Kotlin][kotlin]。
+我感觉 [Kotlin][kotlin] 很好玩，
+于是想尝试一下。
 但后来 [张总][tothegump] 又问我，
 你既然想玩一下 [Kotlin][kotlin]，
 那怎么不试一下 [Go][go] 呢？
-
-于是我去查了查 `Kotlin VS GoLang` 的这个话题，
+我就去查了查 `Kotlin VS Go` 的这个话题，
 发现 [知乎上有人这么说]：
 
 > Kotlin 的大优势和大劣势都是完全兼容 Java。
->
 > 而 Go 最大优势就是对多线程的优化。
 
-又去看了看 [Slant上面的对比][slant-kotlin-go]。
+我又去看了看 [Slant上面的对比][slant-kotlin-go]。
+嗯，感觉其实两个语言都很有前途啊！
+然而 :wink: 我选择 ~~Python~~ Go...
 
-嗯，感觉其实两个都很有前途啊！
+![go-name][go-name]
 
-然而 :wink: 我选择 ~~Python~~ GoLang...
+值得一提的是，
+`GoLang` 只是网站名，
+有的时候 Google 搜 Go 不好搜，
+也会用 GoLang 来搜索。
+
+但 **[Go][go] 语言没有别的名字，本身就叫 `Go`**
 
 
 ## Start my journey
@@ -41,10 +44,10 @@
 我首先就会去 [Learn X In Y Minutes][xy-go] 上看看……
 然后再[稍微看了看官方的 Go Tour][go-tour]。
 
-> 注: 这里十分蛋疼地发现 Go 是推崇 Tabs 的...
-> 我思索了一下，决定还是用 Space
-
 ![wtf-tabs][tabs]
+
+> 注: 这里十分蛋疼地发现 Go 是推崇 Tabs 的...
+> 我思索了一下，决定~~还是用 Space~~入乡随俗，使用 tabs。
 
 百看不如一练，
 直接上手用吧。
@@ -104,11 +107,11 @@ Hi, Lirian
 
 在边玩边学中，
 我们第一个程序就跑成功了。
+我们可以试试各种各样的语法，
+比如 `defer`, `error` 等。
 
-很好，接下来我们尝试写一个 [Low DB][lowdb] 那样的 json/in-memory database吧。
-
-取个名，
-就叫…
+接下来我们尝试写一个 [Low DB][lowdb] 那样的 json/in-memory database吧。
+取个名，就叫…
 
 
 ## Fate DB
@@ -122,6 +125,7 @@ TODO: 施工中...
 [go]: https://golang.org/
 [zhihu-kotlin-go]: https://www.zhihu.com/question/60064789
 [slant-kotlin-go]: https://www.slant.co/versus/126/1543/~golang_vs_kotlin
+[go-name]: /doc/images/go.jpg
 [windows-setup]: http://www.liriansu.com/windows-dev-env
 [choco]: https://chocolatey.org/
 [go-dl]: https://golang.org/dl/
