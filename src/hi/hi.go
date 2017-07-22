@@ -8,19 +8,19 @@ import (
 func main() {
 	fmt.Println("Hi, Lirian")
 
-	defer tryDefer()
+	defer TryDefer()
 
-	fmt.Println(tryError(true))
-	fmt.Println(tryError(false))
+	fmt.Println(TryError(true))
+	fmt.Println(TryError(false))
 
-	tryGo()
+	TryGo()
 }
 
-func tryDefer() {
+func TryDefer() {
 	fmt.Println("this is a defer")
 }
 
-func tryError(expectError bool) error {
+func TryError(expectError bool) error {
 	if expectError {
 		return errors.New("new error")
 	} else {
@@ -28,17 +28,17 @@ func tryError(expectError bool) error {
 	}
 }
 
-func tryChannel(a int, b chan int) {
+func TryChannel(a int, b chan int) {
 	fmt.Printf("Executing %s for %s\n", a, b)
 	b <- a
 }
 
-func tryGo() {
+func TryGo() {
 	b := make(chan int)
 
-	go tryChannel(1, b)
-	go tryChannel(2, b)
-	go tryChannel(4, b)
+	go TryChannel(1, b)
+	go TryChannel(2, b)
+	go TryChannel(4, b)
 
 	fmt.Println(<-b, <-b, <-b)
 }
