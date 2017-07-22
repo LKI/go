@@ -41,7 +41,11 @@
 我首先就会去 [Learn X In Y Minutes][xy-go] 上看看……
 然后再[稍微看了看官方的 Go Tour][go-tour]。
 
-很好，
+> 注: 这里十分蛋疼地发现 Go 是推崇 Tabs 的...
+> 我思索了一下，决定还是用 Space
+
+![wtf-tabs][tabs]
+
 百看不如一练，
 直接上手用吧。
 
@@ -124,6 +128,7 @@ TODO: 施工中...
 [gogland]: https://www.jetbrains.com/go/
 [xy-go]: https://learnxinyminutes.com/docs/go/
 [go-tour]: https://tour.golang.org/welcome/
+[tabs]: /doc/images/tabs_wtf.jpg
 [go-workspace]: https://golang.org/doc/code.html#Workspaces
 [classpath]: https://docs.oracle.com/javase/8/docs/technotes/tools/windows/classpath.html
 [sys-path]: https://docs.python.org/3/library/sys.html
