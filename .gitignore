@@ -1,4 +1,5 @@
 *.exe
 
+/pkg/
 /.idea/
 /src/github.com/
