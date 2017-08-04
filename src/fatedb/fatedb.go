@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 var inMemoryDB = make(map[interface{}]interface{})
 
@@ -28,17 +31,36 @@ func (db DB) Del(key interface{}) {
 	delete(inMemoryDB, key)
 }
 
+func usage() {
+	fmt.Printf("%s <command> <key> <value>", os.Args[0])
+	os.Exit(1)
+}
+
 func main() {
 	var db = DB{}
 	db.Set("5", "6")
 
-	fmt.Println(db.Get("5"))
-	fmt.Println(db.Get(6))
-	fmt.Println(db.GetWithDefault("7", "100"))
+	var args = os.Args[1:]
+	var n = len(args)
+	if n == 0 {
+		usage()
+	}
 
-	var anotherDB = DB{}
-	anotherDB.Set(6, "7")
-	fmt.Println(anotherDB.Get("5"))
-	fmt.Println(db.Get(6))
-	fmt.Println(anotherDB.GetWithDefault("7", "100"))
+	switch args[0] {
+	case "set":
+		if n < 3 {
+			usage()
+		}
+		db.Set(args[1], args[2])
+	case "get":
+		if n == 1 {
+			usage()
+		} else if n == 2 {
+			fmt.Println(db.Get(args[1]))
+		} else {
+			fmt.Println(db.GetWithDefault(args[1], args[2]))
+		}
+	default:
+		usage()
+	}
 }
